@@ -8,7 +8,6 @@ class TodoItems {
   static addtodo = (todoobj) => {
     const todosArr = JSON.parse(localStorage.getItem('todos'));
     todosArr.push(todoobj);
-    this.todoitems = todoobj;
     localStorage.setItem('todos', JSON.stringify(todosArr));
     this.todoitems = todosArr;
     document.location.reload(true);

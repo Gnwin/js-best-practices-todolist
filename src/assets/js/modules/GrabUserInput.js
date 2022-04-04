@@ -4,8 +4,8 @@ import TodoItems from './TodoItems';
 const todoinput = document.querySelector('.todoinput');
 
 class GrabUserInput {
-  grab = (val) => {
-    val.preventDefault();
+  grab = (event) => {
+    event.preventDefault();
     if (todoinput.value === '') {
       return;
     }
@@ -15,23 +15,23 @@ class GrabUserInput {
     todoinput.value = '';
   }
 
-  remove = (val) => {
-    val.preventDefault();
-    if (!val.target.parentElement.children[0].checked) {
+  remove = (event) => {
+    event.preventDefault();
+    if (!event.target.parentElement.children[0].checked) {
       return;
     }
     TodoItems.deletetodo();
   }
 
-  changeBackground = (val) => {
-    val.preventDefault();
-    const parent = val.target.parentElement;
+  changeBackground = (event) => {
+    event.preventDefault();
+    const parent = event.target.parentElement;
     parent.children[2].style.display = 'none';
     parent.children[3].style.display = 'block';
   }
 
-  changeBlur = (val) => {
-    val.preventDefault();
+  changeBlur = (event) => {
+    event.preventDefault();
     const parent = val.target.parentElement;
     parent.children[2].style.display = 'block';
     parent.children[3].style.display = 'none';
@@ -50,8 +50,8 @@ class GrabUserInput {
     TodoItems.clearAll();
   }
 
-  completed = (ev) => {
-    TodoItems.complete(ev);
+  completed = (event) => {
+    TodoItems.complete(event);
   }
 }
 

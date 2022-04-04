@@ -7,8 +7,8 @@ import displayTodos from './modules/DisplayTodos';
 
 let todos;
 if (localStorage.length !== 0) {
-  const b = JSON.parse(localStorage.getItem('todos'));
-  todos = new TodoItems(b);
+  const todolist = JSON.parse(localStorage.getItem('todos'));
+  todos = new TodoItems(todolist);
 } else {
   todos = new TodoItems([]);
   localStorage.setItem('todos', JSON.stringify(todos.todoitems));
