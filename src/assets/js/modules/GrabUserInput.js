@@ -32,7 +32,7 @@ class GrabUserInput {
 
   changeBlur = (event) => {
     event.preventDefault();
-    const parent = val.target.parentElement;
+    const parent = event.target.parentElement;
     parent.children[2].style.display = 'block';
     parent.children[3].style.display = 'none';
   }
